@@ -19,7 +19,7 @@ def app():
     cozulen_soru_sayisi=st.text_input(label=f'Çözülen Soru Sayısı',value=soru_sayisi_hesapla(st.session_state.cozulen_sorular)[1],key='cozulen_soru_sayisi',disabled=True)
     kalan_sorular=st.text_input(label='Kalan Sorular Örn.(8,18)',value=sorted([i for i in soru_sayisi_hesapla(st.session_state.sorular)[0] if i not in soru_sayisi_hesapla(st.session_state.cozulen_sorular)[0]]),key='kalan_sorular',disabled=True)
     kalan_soru_sayisi=st.text_input(label='Kalan Soru Sayısı',value=len([i for i in soru_sayisi_hesapla(st.session_state.sorular)[0] if i not in soru_sayisi_hesapla(st.session_state.cozulen_sorular)[0]]),key='kalan_soru_sayisi',disabled=True)
-    degerlendirme=st.selectbox(label='Ödev Yapıldı mı?',options=['Yapılmadı','Eksik','Yapıldı'],key='degerlendirme')
+    degerlendirme=st.selectbox(label='Ödev Yapıldı mı?',options=['Yapılmadı','Eksik','Yapıldı'],key='degerlendirme',disabled=True)
     aciklama=st.text_input(label='Görüşler:',value='',key='aciklama')
     teacher_rec_odev_ver=(sinav,tarih,ders,odev_veren,konu,kaynak,sayfa,sorular,soru_sayisi,cozulen_sorular,cozulen_soru_sayisi,kalan_sorular,kalan_soru_sayisi,degerlendirme,aciklama)
     teacher_submit_odev_ver = st.button('Ödev Ver')
