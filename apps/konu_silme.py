@@ -1,4 +1,6 @@
-from main import *
+import pandas as pd
+import streamlit as st
+from app import the_conn
 def app():
     # KONU Silme Arayüzü
     st.subheader('KONU SİLME PANOSU')

@@ -1,4 +1,6 @@
-from main import *
+import pandas as pd
+import streamlit as st
+from app import the_conn,soru_sayisi_hesapla,insert_row_from_teacher
 
 def app():
     # Ödev harici arayüzü

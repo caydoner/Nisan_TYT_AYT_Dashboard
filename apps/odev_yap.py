@@ -1,4 +1,7 @@
-from main import *
+import pandas as pd
+import streamlit as st
+from st_aggrid import AgGrid
+from app import the_conn,update_odev,soru_sayisi_hesapla
 
 def app():
     # Ödev Yapma Arayüzü
