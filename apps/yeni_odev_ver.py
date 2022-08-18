@@ -6,7 +6,10 @@ def app():
     sinav=st.selectbox(label='Sınav',options=['TYT','AYT'],key='sinav')
     tarih=st.date_input(label='Odev Tarihi',value=None,key='tarih')
     ders=st.selectbox(label='Ders',options=df_konu.loc[(df_konu.sinav==sinav)].ders.unique().tolist(),key='ders')
-    odev_veren=st.selectbox(label='Ödevi Veren',options=["OKUL ÖĞRETMENİ","MUSTAFA TEKİN","ÖDEV HARİCİ ÇALIŞMA"],key='unite')
+    if st.session_state["username"]=='mtekin':
+        odev_veren=st.text_input(label='Ödevi Veren',value="MUSTAFA TEKİN", key='unite',disabled=True)
+    else:
+        odev_veren = st.selectbox(label='Ödevi Veren', options=["MUSTAFA TEKİN", "OKUL ÖĞRETMENİ", "ÖDEV HARİCİ ÇALIŞMA"], key='unite')
     konu=st.selectbox(label='Konu',options=df_konu.loc[(df_konu.sinav==sinav)&(df_konu.ders==ders)].konu.unique().tolist(),key='konu')
     kaynak=st.selectbox(label='Ödevin Verildiği Kaynak Kitap:', options=['Apotemi','Acil','Orjinal','Bilgi Sarmalı','3-4-5'])
     sayfa=st.text_input(label='Ödev Sayfası:',key='sayfa')
