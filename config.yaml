@@ -1,0 +1,17 @@
+cookie:
+  expiry_days: 1
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    mtekin:
+      email: cihangir.aydoner@gmail.com
+      name: Mustafa Tekin
+      password: $2b$12$GJwpme/jSDzMvz81AIyjW.brjjkJ2Ed2ZPdfrAWffXteGfKfnzRZq
+    naydoner:
+      email: nisan.aydoner@gmail.com
+      name: Nisan Aydöner
+      password: $2b$12$KG21CQHsjA.eR3Gk33GnWeZHKNSJP73pzInrDem0wgcagKluEOoKS
+preauthorized:
+  emails:
+  - cihangir.aydoner@gmail.com

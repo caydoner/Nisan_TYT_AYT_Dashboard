@@ -1,0 +1,62 @@
+
+
+/* 'ÜNİVERSİTE HAZIRLIK ÇALIŞMALARI İZLEME VE DEĞERLENDİRME PANOSU' */
+.css-10trblm.e16nr0p30{
+   color: rgb(0, 0, 0);
+   font-size: 30px;
+   font-weight: 800;
+   text-align: center;
+   padding-bottom:20px;
+
+}
+.css-mustafahocaodevi{
+
+background: rgb(0, 220, 220);
+border: 1px solid;
+padding:10px;
+
+
+}
+/* DERS  KAYNAK KONU SATIRI*/
+.css-ocqkz7.e1tzin5v4{
+background: rgb(220, 220, 220);
+border: 1px solid;
+padding:10px;
+
+}
+/* 'ARKA PLAN' */
+.css-18e3th9.egzxvld2 {
+    background-color: rgb(200, 200, 250);
+}
+/* DERS  KAYNAK KOLONU */
+.css-ytkq5y.e1tzin5v2{
+background: rgb(220, 220, 220);
+border: 1px solid;
+padding:5px;
+
+}
+
+/* KONU KOLONU */
+.css-1bzkvni.e1tzin5v2{
+background: rgb(220, 220, 220);
+border: 1px solid;
+padding:5px;
+}
+
+
+/* DERS KAYNAK KONU LABEL  */
+.css-15tx938.effi0qh3{
+   color: rgb(0, 0, 0);
+   font-size: 18px;
+   font-weight: 600;
+   padding:0px;
+
+}
+/* METRİCS SAYILAR  */
+.css-fg4pbf {
+
+    color: rgb(255,11,11);
+    inset: 5px;
+    overflow: hidden;
+}
+
