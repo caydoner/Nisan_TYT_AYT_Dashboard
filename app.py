@@ -4,9 +4,12 @@ import yaml
 from streamlit_authenticator import Authenticate
 from yaml import SafeLoader
 from utility import *
-
+st.set_page_config(
+    page_title="Nisan's TYT and AYT Dashboard",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded")
 local_css('style.css')
-
 
 
 # --- USER AUTHENTICATION ---
