@@ -145,6 +145,7 @@ def degerlendir():
 
 
 def calc_metrics(ders, kaynak, konu,sinav):
+    df_teacher= pd.read_sql_query("SELECT * from teacher_table", the_conn)
     if ders == 'Tümü' and kaynak == 'Tümü' and konu == 'Tümü':
         m_tyt_soru_sayisi = df_teacher.loc[(df_teacher.odev_veren == "MUSTAFA TEKİN") & (df_teacher.sinav == sinav)].soru_sayisi.sum()
         m_tyt_cozulen_soru_sayisi = df_teacher.loc[(df_teacher.odev_veren == "MUSTAFA TEKİN") & (df_teacher.sinav == sinav)].cozulen_soru_sayisi.sum()
