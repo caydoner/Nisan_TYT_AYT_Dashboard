@@ -1,7 +1,4 @@
-import pandas as pd
-import streamlit as st
-from app import the_conn,soru_sayisi_hesapla,insert_row_from_teacher
-
+from utility import *
 def app():
     # Ödev harici arayüzü
     st.subheader('ÖDEV HARİCİ ÇALIŞMA EKLEME PANOSU')

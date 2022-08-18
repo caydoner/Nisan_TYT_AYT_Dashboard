@@ -1,7 +1,4 @@
-import pandas as pd
-import streamlit as st
-from st_aggrid import AgGrid
-from app import the_conn
+from utility import *
 
 def app():
     df_teacher= pd.read_sql_query("SELECT * from teacher_table", the_conn)

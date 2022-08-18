@@ -1,6 +1,4 @@
-import pandas as pd
-import streamlit as st
-from app import the_conn,konu_ekle
+from utility import *
 def app():
     # KONU Ekleme ARAYÜZÜ
     st.subheader('YENİ KONU EKLEME PANOSU')

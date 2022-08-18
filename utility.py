@@ -1,20 +1,11 @@
-import pickle
+import streamlit as st
 import re
-from pathlib import Path
-import datetime
 import sqlite3
 from sqlite3 import Error
 import pandas as pd
-import streamlit as st
-import yaml
 from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode, GridOptionsBuilder
 import streamlit_authenticator as stauth
-from streamlit_authenticator import Authenticate
-from yaml import SafeLoader
-
 st.set_page_config(layout="wide")
-
-
 
 def local_css(file_name):
     with open(file_name) as f:
