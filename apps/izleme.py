@@ -1,4 +1,4 @@
-
+from utility import *
 def app():
     df_teacher= pd.read_sql_query("SELECT * from teacher_table", the_conn)
     st.header('İZLEME VE DEĞERLENDİRME PANOSU')
