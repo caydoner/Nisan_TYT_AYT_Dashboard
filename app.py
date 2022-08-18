@@ -4,7 +4,6 @@ import streamlit as st
 import yaml
 from streamlit_authenticator import Authenticate
 from yaml import SafeLoader
-from utility import *
 
 
 # --- USER AUTHENTICATION ---
