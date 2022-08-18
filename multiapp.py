@@ -40,6 +40,6 @@ class MultiApp:
 
     def run(self):
         st.sidebar.title("NiSAN TYT VE AYT ÇALIŞMALARI")
-        app = st.sidebar.radio('UYGULAMALAR',self.apps,format_func=lambda app: app['title'])
+        app = st.sidebar.radio('UYGULAMALAR',self.apps,format_func=lambda app: app['title'],)
 
         app['function']()

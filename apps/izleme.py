@@ -36,65 +36,62 @@ def app():
     st.subheader('MUSTAFA TEKİN')
     m1, m2, m3,m4,m5,m6 = st.columns([2, 2, 4,2, 2, 4])
     with m1:
-        tyt_mhoca_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[0], delta="1.2 °F")
+        tyt_mhoca_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[0], delta="1.2 %")
     with m2:
-        tyt_mhoca_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[1], delta="1.2 °F")
+        tyt_mhoca_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[1], delta="1.2 %")
     with m3:
-        tyt_mhoca_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[2], delta="1.2 °F")
+        tyt_mhoca_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[2], delta="1.2 %")
     with m4:
-        ayt_mhoca_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu, 'AYT')[0], delta="1.2 °F")
+        ayt_mhoca_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu, 'AYT')[0], delta="1.2 %")
     with m5:
-        ayt_mhoca_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu, 'AYT')[1], delta="1.2 °F")
+        ayt_mhoca_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu, 'AYT')[1], delta="1.2 %")
     with m6:
-        ayt_mhoca_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[2], delta="1.2 °F")
+        ayt_mhoca_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[2], delta="1.2 %")
 
     st.subheader('OKUL')
     o1, o2, o3,o4,o5,o6 = st.columns([2, 2, 4,2, 2, 4])
     with o1:
-        tyt_okul_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[3], delta="1.2 °F")
+        tyt_okul_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[3], delta="1.2 %")
     with o2:
-        tyt_okul_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[4], delta="1.2 °F")
+        tyt_okul_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[4], delta="1.2 %")
     with o3:
-        tyt_okul_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[5],
-                                                     delta="1.2 °F")
+        tyt_okul_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[5],delta="1.2 %")
     with o4:
-        ayt_okul_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[3], delta="1.2 °F")
+        ayt_okul_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[3], delta="1.2 %")
     with o5:
-        ayt_okul_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[4], delta="1.2 °F")
+        ayt_okul_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[4], delta="1.2 %")
     with o6:
-        ayt_okul_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[5], delta="1.2 °F")
+        ayt_okul_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[5], delta="1.2 %")
 
     st.subheader('ÖDEV HARİCİ')
     n1, n2, n3,n4,n5,n6 = st.columns([2, 2, 4,2, 2, 4])
     with n1:
-        tyt_okul_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[6], delta="1.2 °F")
+        tyt_okul_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[6], delta="1.2 %")
     with n2:
-        tyt_okul_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[7], delta="1.2 °F")
+        tyt_okul_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[7], delta="1.2 %")
     with n3:
-        tyt_okul_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[8],
-                                                     delta="1.2 °F")
+        tyt_okul_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[8],delta="1.2 %")
     with n4:
-        ayt_okul_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[6], delta="1.2 °F")
+        ayt_okul_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[6], delta="1.2 %")
     with n5:
-        ayt_okul_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[7], delta="1.2 °F")
+        ayt_okul_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[7], delta="1.2 %")
     with n6:
-        ayt_okul_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[8], delta="1.2 °F")
+        ayt_okul_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[8], delta="1.2 %")
 
     st.subheader('TOPLAM')
     t1, t2, t3,t4,t5,t6 = st.columns([2, 2, 4,2, 2, 4])
     with t1:
-        tyt_okul_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[9], delta="1.2 °F")
+        tyt_okul_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[9], delta="1.2 %")
     with t2:
-        tyt_okul_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[10], delta="1.2 °F")
+        tyt_okul_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[10], delta="1.2 %")
     with t3:
-        tyt_okul_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[11],
-                                                     delta="1.2 °F")
+        tyt_okul_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(tytders,tytkaynak,tytkonu,'TYT')[11],delta="1.2 %")
     with t4:
-        ayt_okul_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[9], delta="1.2 °F")
+        ayt_okul_verilen_soru_sayisi = st.metric(label="Verilen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[9], delta="1.2 %")
     with t5:
-        ayt_okul_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[10], delta="1.2 °F")
+        ayt_okul_cozulen_soru_sayisi = st.metric(label="Çözülen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[10], delta="1.2 %")
     with t6:
-        ayt_okul_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[11], delta="1.2 °F")
+        ayt_okul_cozulemeyen_soru_sayisi = st.metric(label="Çözülemeyen Soru Sayısı", value=calc_metrics(aytders,aytkaynak,aytkonu,'AYT')[11], delta="1.2 %")
 
     st.subheader('VERİLEN ÖDEVLER VE ÖDEV HARİCİ ÇALIŞMALAR TABLOSU')
     df_teacher = pd.read_sql_query("SELECT * from teacher_table", the_conn)

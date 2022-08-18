@@ -5,7 +5,11 @@ from sqlite3 import Error
 import pandas as pd
 from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode, GridOptionsBuilder
 import streamlit_authenticator as stauth
-st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title="Nisan's TYT and AYT Dashboard",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded")
 
 def local_css(file_name):
     with open(file_name) as f:
@@ -42,8 +46,8 @@ def create_table(the_conn, create_table_sql):
 
 
 def insert_row_from_teacher(the_conn, kayit):
-    sql_for_insert_teacher_rec = """INSERT INTO teacher_table(sinav,tarih,ders,odev_veren,konu,kaynak,sayfa,sorular,soru_sayisi,kalan_sorular,kalan_soru_sayisi,degerlendirme,Aciklama)
-       VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?) """
+    sql_for_insert_teacher_rec = """INSERT INTO teacher_table(sinav,tarih,ders,odev_veren,konu,kaynak,sayfa,sorular,soru_sayisi,cozulen_sorular,cozulen_soru_sayisi,kalan_sorular,kalan_soru_sayisi,degerlendirme,Aciklama)
+       VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) """
     cur = the_conn.cursor()
     cur.execute(sql_for_insert_teacher_rec, kayit)
     the_conn.commit()
@@ -71,7 +75,7 @@ def update_odev(conn, task):
     :return: project id
     """
     sql = ''' UPDATE teacher_table
-                 SET cozulen_sorular = ?, cozulen_soru_sayisi = ?, kalan_sorular=?, kalan_soru_sayisi=?
+                 SET cozulen_sorular = ?, cozulen_soru_sayisi = ?, kalan_sorular=?, kalan_soru_sayisi=?, degerlendirme=?
                  WHERE id=? '''
     cur = conn.cursor()
     cur.execute(sql, task)
@@ -127,20 +131,13 @@ def soru_sayisi_hesapla(s):
     return [sorular, len(sorular)]
 
 
-def degerlendir():
-    if "cozulen_soru_sayisi" not in st.session_state:
-        st.session_state.cozulen_soru_sayisi = 0
-    if "soru_sayisi" not in st.session_state:
-        st.session_state.soru_sayisi = 0
-    cozulen_soru_sayisi = eval(st.session_state['cozulen_soru_sayisi'])
-    soru_sayisi = eval(st.session_state['soru_sayisi'])
+def degerlendir(soru_sayisi,cozulen_soru_sayisi):
     if cozulen_soru_sayisi == soru_sayisi:
-        st.session_state['degerlendirme'] = 'Yapıldı'
-    elif cozulen_soru_sayisi == 0:
-        st.session_state['degerlendirme'] = 'Yapılmadı'
+        return 'Yapıldı'
+    elif cozulen_soru_sayisi == "0":
+        return 'Yapılmadı'
     else:
-        st.session_state['degerlendirme'] = 'Eksik'
-    return st.session_state['degerlendirme']
+        return 'Eksik'
 
 
 
@@ -312,7 +309,7 @@ if the_conn is not None:
 else:
     print("Hata! veritabani baglantisi kurulamiyor.Tablolar Oluşturulamadı.")
 
-local_css(r"style.css")
+
 df_teacher = pd.read_sql_query("SELECT * from teacher_table", the_conn)
 df_konu = pd.read_sql_query("SELECT * from konutable", the_conn)
 

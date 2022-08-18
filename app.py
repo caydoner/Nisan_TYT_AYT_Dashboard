@@ -1,9 +1,12 @@
 from multiapp import MultiApp
 from apps import yeni_odev_ver,odev_sil,odev_yap,izleme,odev_harici_calisma,yeni_konu_ekle,konu_silme
-import streamlit as st
 import yaml
 from streamlit_authenticator import Authenticate
 from yaml import SafeLoader
+from utility import *
+
+local_css('style.css')
+
 
 
 # --- USER AUTHENTICATION ---
@@ -33,9 +36,9 @@ if authentication_status:
 
         # Add all your application here
         app.add_app("ÖDEV İZLEME VE DEĞERLENDİRME", izleme.app)
-        app.add_app("YENİ ÖDEV VER", yeni_odev_ver.app)
+        #app.add_app("YENİ ÖDEV VER", yeni_odev_ver.app)
         app.add_app("ÖDEV YAP", odev_yap.app)
-        app.add_app("ÖDEV SİL", odev_sil.app)
+        #app.add_app("ÖDEV SİL", odev_sil.app)
         app.add_app("KONU EKLE",yeni_konu_ekle.app)
         app.add_app("KONU SİL", konu_silme.app)
         app.add_app("ÖDEV HARİCİ ÇALIŞMA",odev_harici_calisma.app)
