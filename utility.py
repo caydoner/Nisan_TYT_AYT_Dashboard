@@ -111,19 +111,15 @@ def insert_user(the_conn, kayit):
 
 def soru_sayisi_hesapla(s):
     sorular = []
-    patrn1 = r",\d+"
-    patrn2 = r"\d+-\d+"
-    p1_list = re.findall(pattern=patrn1, string=s)
-    p2_list = re.findall(pattern=patrn2, string=s)
-
-    if len(p1_list) > 0:
-        for i in p1_list:
-            sorular = sorular + [eval(i[1:])]
-    if len(p2_list) > 0:
-        for i in p2_list:
-            t = i.split(sep='-')
-            val = range(int(t[0]), int(t[1]) + 1)
-            sorular = sorular + list(val)
+    s_list=s.split(',')
+    if len(s_list)>0:
+        for i in s_list:
+            if i.isdigit():
+                sorular = sorular+[int(i)]
+            elif "-" in i:
+                t = i.split(sep='-')
+                val = range(int(t[0]), int(t[1]) + 1)
+                sorular = list(set(sorular+(list(val))))
     return [sorular, len(sorular)]
 
 
